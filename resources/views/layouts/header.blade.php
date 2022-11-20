@@ -1,6 +1,8 @@
+<link rel="stylesheet" href={{ asset('css/header.css') }}>
 <header>
     <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <div class="container">
+            <a class="logo"><img src="{{ asset('img/spa_logo.png') }}" alt="ロゴ"></a>
             <a class="navbar-brand" href="{{ url('/') }}">
                 {{ config('app.name', 'Laravel') }}
             </a>

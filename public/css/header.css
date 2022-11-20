@@ -1,0 +1,17 @@
+/* header */
+header {
+    font-family: "Hannotate SC";
+}
+/* タイトルロゴ */
+/* .logo {
+    
+} */
+
+/* タイトル */
+.navbar-brand {
+    font-weight: bold;
+    padding: 10px;
+    font-size: 25px;
+}
+
+/*  */
