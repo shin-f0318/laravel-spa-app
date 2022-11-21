@@ -1,3 +1,8 @@
+/* 背景 */
+body {
+    background-image: url(../img/washi.png);
+}
+
 .container {
     display: flex;
 }

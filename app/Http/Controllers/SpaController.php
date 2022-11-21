@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class SpaController extends Controller
 {
+    public function home()
+    {
+        return view('home');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -29,7 +33,7 @@ class SpaController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
