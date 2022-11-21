@@ -12,10 +12,13 @@ use App\Http\Controllers\SpaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [SpaController::class, 'home'])->name('home');
+Route::get('/', [SpaController::class, 'top'])->name('top');
 Route::get('/index', [SpaController::class, 'index'])->name('index');
 Route::get('/serch', [SpaController::class, 'serch'])->name('serch');
+
+// お問合せ
 Route::get('/create', [SpaController::class, 'create'])->name('create');
+Route::post('/create', [ContactController::class, 'store'])->name('store');
 
 
 Auth::routes();

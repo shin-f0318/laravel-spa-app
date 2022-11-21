@@ -1,6 +1,7 @@
 /* 背景 */
 body {
     background-image: url(../img/washi.png);
+    font-family: "Hannotate SC";
 }
 
 /* main画像 */
@@ -32,7 +33,6 @@ body {
 
 /* h2 */
 h2 {
-    font-family: "Hannotate SC";
     font-weight: bold;
     text-align:center;
     padding: 20px;
@@ -40,7 +40,6 @@ h2 {
 
 /* ボタン */
 .btn-container {
-    font-family: "Hannotate SC";
     text-align: center;
 }
   
@@ -63,7 +62,6 @@ h2 {
 
 /* 説明文 */
 .explanation {
-    font-family: "Hannotate SC";
     font-size: 15px;
     color: black;
     padding: 50px;
@@ -99,7 +97,6 @@ h2 {
 }
 
 .favorite-btn-container {
-    font-family: "Hannotate SC";
     font-weight: bolder;
 }
 
