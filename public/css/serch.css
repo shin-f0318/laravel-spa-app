@@ -1,8 +1,75 @@
 /* 背景 */
 body {
     background-image: url(../img/washi.png);
-    overflow: scroll;
+    font-family: "Hannotate SC";
 }
+
+h1 {
+    font-weight: bold;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+.toptext {
+    font-weight: bold;
+}
+
+/* 登録フォーム */
+/* テーブル全体 */
+table {
+    width:700px;
+    text-align: center;
+    border-collapse: collapse;
+}
+th {
+    padding: 10px;
+    border-bottom: solid 5px #748ca5;
+}
+td {
+    padding: 10px;
+    border-bottom: solid 1px #748ca5;
+}
+
+/* ラジオボタン */
+.radioBtn>label{
+    display: block;
+    padding: 5px;
+    cursor: pointer;
+}
+.radioBtn>label:hover{
+    color: red;
+}
+.radioBtn>label>input{
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+/* 送信・取消ボタン */
+.spa_btn {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    padding: 5px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+    
+.spa_btn:hover {
+    background-color: #748ca5;
+    border: 1px solid #748ca5;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
 
   /* map */
  /* Set the size of the div element that contains the map */
@@ -10,8 +77,20 @@ body {
  * Always set the map height explicitly to define the size of the div element
  * that contains the map. 
  */
- #map {
-    height: 85%;
-    margin: 5, 5;
-    padding: 0;
-  }
+ #map-container {
+    position: relative;
+    margin: 30px;
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
+}
+  
+#map {
+    position: absolute;
+    padding: 50px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75%;
+    border: 1px solid black;
+}

@@ -32,7 +32,7 @@
         
 
         <div class="btn-container">
-            <button class="btn" onclick="location.href='{{ route('serch') }}' ">探す</button>
+            <button class="btn" onclick="location.href='{{ route('serch') }}' ">登録する</button>
         </div>
 
         <div class="explanation">

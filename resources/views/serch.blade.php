@@ -18,27 +18,67 @@
         </div>
         <br>
         <div>
-            <p>マップ上に湯とサウナの情報を登録しよう</p>
+            <h3>マップ上に湯とサウナの情報を登録しましょう</h3>
         </div>
         <br>
-        <div>
-            <p>地図上でクリックして下記情報を登録してください</p>
+        <div class="toptext">
+            <p>--地図上でクリックして下記情報を登録してください--</p>
         </div>
-            <form>
+
+        <div class=spa_form>
+            <form action="">
                 <table>
                     <tr>
-                    <th>項目</th>
-                    <th>情報</th></tr>
-                    <tr><td>緯度</td><td id="id_ido"></td></tr>
-                    <tr><td>経度</td><td id="id_keido"></td></tr>
-                    <tr><td>住所</td><td id="id_address"></td></tr>
+                        <th>項目</th>
+                        <th>登録情報</th>
+                    </tr>
+                    {{-- <tr><td>緯度</td><td id="id_ido"></td></tr>
+                    <tr><td>経度</td><td id="id_keido"></td></tr> --}}
+                    <tr>
+                        <td>登録住所</td>
+                        <td id="id_address"></td>
+                    </tr>
+
+                    <tr>
+                        <td>登録名</td>
+                        <td><input type="text" class="form-control" name="spa_name" placeholder="施設名を入力してください"></td>
+                    </tr>
+
+                    <tr>
+                        <td>種別</td>
+                        <td>
+                            <div class="radioBtn">
+                                <label><input type="radio" value="温泉" name="spa_type" checked>温泉</label>
+                                <label><input type="radio" value="銭湯" name="spa_type">銭湯</label>
+                                <label><input type="radio" value="サウナ" name="spa_type">サウナ</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>料金</td>
+                        <td><input type="number" class="from-control" name="spa_price" placeholder="料金を入力してください"></td>
+                    </tr>
+
+                    <tr>
+                        <td>特徴・感想</td>
+                        <td><textarea class="form-control" name="spa_point" placeholder="施設の特徴や感想を入力してください"></textarea></td>
+                    </tr>
+                    
+                    <td>登録</td>
+                    <td><input type="submit" class="spa_btn" value="登録">
+                        <input type="reset" class="spa_btn" value="取消">
+                    </td>
+                    
+
                 </table>
             </form>
+        </div>
         <br>
     </div>
     <!-- 地図を表示する領域 -->
-    <div id="map"></div>
-  
+    <div id="map-container">
+        <div id="map"></div>
+    </div>
     <!-- 
     The `defer` attribute causes the callback to execute after the full HTML
     document has been parsed. For non-blocking uses, avoiding race conditions,
@@ -50,6 +90,7 @@
       async
       defer
     ></script>
+  
 </main>
 </body>
 

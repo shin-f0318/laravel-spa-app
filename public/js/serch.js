@@ -22,12 +22,12 @@ function clickListener(event, map) {
   // 緯度取得
   const lat = event.latLng.lat();
   // htmlへ変数の送信
-  document.getElementById('id_ido').innerHTML = lat ;
+  // document.getElementById('id_ido').innerHTML = lat ;
 
   // 経度の取得
   const lng = event.latLng.lng();
   // htmlへ変数の送信
-  document.getElementById('id_keido').innerHTML = lng ;
+  // document.getElementById('id_keido').innerHTML = lng ;
 
   // ピンの設置
   const marker = new google.maps.Marker({
