@@ -14,7 +14,7 @@
 <body>
     <section>
         
-        <h2>自分だけのお気に入りの湯とサウナを見つよう</h2>
+        <h2>自分だけのお気に入りの湯とサウナを登録していこう</h2>
         
         <div class="flex-container">
             <div class="flex-item">
@@ -38,9 +38,9 @@
         <div class="explanation">
             <p><span class="main-text">湯屋なう</span>とは？</p>
             <p><span class="sub-text">温泉</span>、<span class="sub-text">銭湯</span>、<span class="sub-text">サウナ</span>好きのためのアプリになります。</p>
-            <p>全国の温泉、銭湯、サウナを地図上で確認し営業時間や料金を調べることができます。
+            <p>全国の温泉、銭湯、サウナを地図上で登録することができます。
                 自分で行ったことのある場所をお気に入りしたり、レビューを書いたりすることができます。
-                新たなお店の発見やお気に入りの場所を登録して自分だけの湯を探していきましょう。
+                新たなお店の発見やお気に入りの場所を登録して自分だけの湯Mapを作成していこう。
             </p>
         </div>
     </section>

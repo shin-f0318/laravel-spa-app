@@ -1,8 +1,17 @@
 /* 背景 */
 body {
     background-image: url(../img/washi.png);
+    overflow: scroll;
 }
 
-.container {
-    display: flex;
-}
+  /* map */
+ /* Set the size of the div element that contains the map */
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+ #map {
+    height: 85%;
+    margin: 5, 5;
+    padding: 0;
+  }
