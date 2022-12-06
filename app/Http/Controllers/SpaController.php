@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Spa;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class SpaController extends Controller
@@ -29,14 +30,22 @@ class SpaController extends Controller
 
     // マップ登録ページpost
     public function map_store(Request $request) {
-        $spas = new Spa ();
+        $spas = new Spa();
+        $spas->spa_lat = $request->input('spa_lat');
+        $spas->spa_lng = $request->input('spa_lng');
         $spas->spa_address = $request->input('spa_address');
         $spas->spa_name = $request->input('spa_name');
         $spas->spa_type = $request->input('spa_type');
         $spas->spa_price = $request->input('spa_price');
         $spas->spa_point = $request->input('spa_point');
+        $spas->save();
         return view('/index', compact('spas'));
     }
+
+
+
+
+    // お問合せ画面
     /**
      * Show the form for creating a new resource.
      *
@@ -46,6 +55,7 @@ class SpaController extends Controller
         return view('create');
     }
 
+    // お問合せpost
     /**
      * Store a newly created resource in storage.
      *
@@ -53,6 +63,13 @@ class SpaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        return view('create');
+        $contacts = new Contact();
+        $contacts->name = $request->input('name');
+        $contacts->sex = $request->input('sex');
+        $contacts->mail = $request->input('mail');
+        $contacts->tel = $request->input('tel');
+        $contacts->contactText = $request->input('contactText');
+        $contacts->save();
+        return view('/create', compact('contacts'));
     }
 }

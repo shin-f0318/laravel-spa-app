@@ -28,12 +28,12 @@
                 <th class="contact-item">性別</th>
                 <td class="contact-body">
                   <label class="contact-sex">
-                    <input type="radio" name="性別">
-                    <span class="contact-sex-txt">男</span>
+                    <input type="radio" name="sex" value="男">
+                    <span class="contact-sex-txt">男性</span>
                   </label>
                   <label class="contact-sex">
-                    <input type="radio" name="性別">
-                    <span class="contact-sex-txt">女</span>
+                    <input type="radio" name="sex" value="女">
+                    <span class="contact-sex-txt">女性</span>
                   </label>
                 </td>
             </tr>
@@ -41,21 +41,21 @@
             <tr>
                 <th class="contact-item">メール</th>
                 <td class="contact-body">
-                  <input type="email" name="メール" class="form-text" placeholder="入力してください">
+                  <input type="email" name="mail" class="form-text" placeholder="入力してください">
                 </td>
             </tr>
 
             <tr>
                 <th class="contact-item">電話</th>
                 <td class="contact-body">
-                  <input type="tel" name="電話" class="form-text" placeholder="入力してください">
+                  <input type="tel" name="tel" class="form-text" placeholder="入力してください">
                 </td>
             </tr>
               
             <tr>
                 <th class="contact-item">お問い合わせ内容</th>
                 <td class="contact-body">
-                  <textarea name="問い合わせ" class="form-textarea"></textarea>
+                  <textarea name="contactText" class="form-textarea"></textarea>
                 </td>
             </tr>
         </table>

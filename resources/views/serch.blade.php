@@ -14,7 +14,7 @@
 <main>
     <div class="container">
         <div>
-            <h1>〜湯屋なう　まっぷ〜</h1>
+            <h1>〜湯屋なう登録〜</h1>
         </div>
         <br>
         <div>
@@ -27,16 +27,17 @@
 
         <div class=spa_form>
             <form action="{{ route('map_store') }}" method="post">
+                @csrf
                 <table>
                     <tr>
                         <th>項目</th>
                         <th>登録情報</th>
                     </tr>
-                    {{-- <tr><td>緯度</td><td id="id_ido"></td></tr>
-                    <tr><td>経度</td><td id="id_keido"></td></tr> --}}
+                    <tr><td>緯度</td><td><input id="id_lat" name="spa_lat"></td></tr>
+                    <tr><td>経度</td><td><input id="id_lng" name="spa_lng"></td></tr>
                     <tr>
                         <td>登録住所</td>
-                        <td id="id_address" name="spa_address"></td>
+                        <td><input id="id_address" name="spa_address"></td>
                     </tr>
 
                     <tr>

@@ -36,6 +36,7 @@ td {
 .radioBtn>label{
     display: block;
     padding: 5px;
+    text-align: left;
     cursor: pointer;
 }
 .radioBtn>label:hover{
@@ -71,7 +72,7 @@ td {
 
 
 
-  /* map */
+/* map */
  /* Set the size of the div element that contains the map */
 /* 
  * Always set the map height explicitly to define the size of the div element

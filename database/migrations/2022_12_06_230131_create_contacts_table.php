@@ -4,7 +4,6 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-
 return new class extends Migration
 {
     /**
@@ -14,15 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('spas', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->double('spa_lat',9,7);
-            $table->double('spa_lng',10,7);
-            $table->string('spa_address');
-            $table->string('spa_name');
-            $table->string('spa_type');
-            $table->string('spa_price');
-            $table->text('spa_point');
+            $table->string('name');
+            $table->string('sex');
+            $table->string('mail');
+            $table->string('tel');
+            $table->text('contactText');
             $table->timestamps();
         });
     }
@@ -34,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('spas');
+        Schema::dropIfExists('contacts');
     }
 };
