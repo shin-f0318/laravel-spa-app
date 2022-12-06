@@ -26,7 +26,7 @@
         </div>
 
         <div class=spa_form>
-            <form action="">
+            <form action="{{ route('map_store') }}" method="post">
                 <table>
                     <tr>
                         <th>項目</th>
@@ -36,7 +36,7 @@
                     <tr><td>経度</td><td id="id_keido"></td></tr> --}}
                     <tr>
                         <td>登録住所</td>
-                        <td id="id_address"></td>
+                        <td id="id_address" name="spa_address"></td>
                     </tr>
 
                     <tr>
@@ -75,6 +75,12 @@
         </div>
         <br>
     </div>
+    <input
+      id="pac-input"
+      class="controls"
+      type="text"
+      placeholder="Search Box"
+    >
     <!-- 地図を表示する領域 -->
     <div id="map-container">
         <div id="map"></div>
@@ -87,6 +93,8 @@
     -->
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe3QyTBQBRbazc1cffB3BE3mjEBIdKbkw&callback=initMap&v=weekly"
+      src="https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDe3QyTBQBRbazc1cffB3BE3mjEBIdKbkw"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe3QyTBQBRbazc1cffB3BE3mjEBIdKbkw&libraries=places&callback=initAutocomplete"
       async
       defer
     ></script>

@@ -16,6 +16,11 @@ return new class extends Migration
     {
         Schema::create('spas', function (Blueprint $table) {
             $table->id();
+            $table->string('spa_address');
+            $table->string('spa_name');
+            $table->string('spa_type');
+            $table->string('spa_price');
+            $table->text('spa_point');
             $table->timestamps();
         });
     }

@@ -11,6 +11,32 @@ function initMap() {
 // クリック動作
 google.maps.event.addListener(map, 'click', event => clickListener(event, map));
 
+// 位置情報取得
+function success(pos) {
+  // 緯度取得
+  var lat = pos.coords.latitude;
+  // 経度取得
+  var lng = pos.coords.longitude;
+  //中心の緯度, 経度
+  var latlng = new google.maps.LatLng(lat, lng);
+  // マップに反映
+  var map = new google.maps.Map(document.getElementById('maps'), {
+    zoom: 12,
+    center: latlng
+  });
+}
+function fail(error) {
+  alert('位置情報の取得に失敗しました。エラーコード：' + error.code);
+  var latlng = new google.maps.LatLng(35.6812405, 139.7649361); //東京駅
+  var map = new google.maps.Map(document.getElementById('maps'), {
+    zoom: 12,
+    center: latlng
+  });
+}
+navigator.geolocation.getCurrentPosition(success, fail);
+
+// 検索ボックス
+
 }
 
 // 一つ前のピンの変数
@@ -91,6 +117,10 @@ function clickListener(event, map) {
       // htmlへ変数の送信
       document.getElementById('id_address').innerHTML = address;
     });
+
+    
+    
 }
 
 window.initMap = initMap;
+

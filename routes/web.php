@@ -12,9 +12,15 @@ use App\Http\Controllers\SpaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// トップページ
 Route::get('/', [SpaController::class, 'top'])->name('top');
+
+// マップ一覧ページ
 Route::get('/index', [SpaController::class, 'index'])->name('index');
+
+// 施設登録ページ
 Route::get('/serch', [SpaController::class, 'serch'])->name('serch');
+Route::post('/serch', [SpaController::class, 'map_store'])->name('map_store');
 
 // お問合せ
 Route::get('/create', [SpaController::class, 'create'])->name('create');

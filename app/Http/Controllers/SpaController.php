@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class SpaController extends Controller
 {
-    public function top()
-    {
+    // トップページ表示
+    public function top() {
         return view('top');
     }
     /**
@@ -16,23 +16,33 @@ class SpaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+
+    //  一覧ページ表示
+    public function index() {
         return view('index');
     }
 
-    public function serch()
-    {
+    // マップ登録ページ表示
+    public function serch() {
         return view('serch');
     }
 
+    // マップ登録ページpost
+    public function map_store(Request $request) {
+        $spas = new Spa ();
+        $spas->spa_address = $request->input('spa_address');
+        $spas->spa_name = $request->input('spa_name');
+        $spas->spa_type = $request->input('spa_type');
+        $spas->spa_price = $request->input('spa_price');
+        $spas->spa_point = $request->input('spa_point');
+        return view('/index', compact('spas'));
+    }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         return view('create');
     }
 
@@ -42,53 +52,7 @@ class SpaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         return view('create');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Spa  $spa
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Spa $spa)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Spa  $spa
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Spa $spa)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Spa  $spa
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Spa $spa)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Spa  $spa
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Spa $spa)
-    {
-        //
     }
 }
