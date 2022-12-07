@@ -23,7 +23,7 @@
                     <!-- Authentication Links -->
 
                     <li class="nav-item">
-                        <a class='nav-link' href="{{ url('/create') }}">お問合せ</a>
+                        <a class='nav-link' href="{{ url('login') }}">お問合せ</a>
                     </li>
 
                     @guest

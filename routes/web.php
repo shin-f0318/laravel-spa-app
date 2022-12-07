@@ -16,7 +16,7 @@ use App\Http\Controllers\SpaController;
 Route::get('/', [SpaController::class, 'top'])->name('top');
 
 // マップ一覧ページ
-Route::get('/index', [SpaController::class, 'index'])->name('index');
+Route::get('/map', [SpaController::class, 'map'])->name('map');
 
 // 施設登録ページ
 Route::get('/serch', [SpaController::class, 'serch'])->name('serch');
@@ -25,6 +25,7 @@ Route::post('/serch', [SpaController::class, 'map_store'])->name('map_store');
 // お問合せ
 Route::get('/create', [SpaController::class, 'create'])->name('create');
 Route::post('/create', [SpaController::class, 'store'])->name('store');
+Route::get('/index', [SpaController::class, 'index'])->name('index');
 
 
 Auth::routes();

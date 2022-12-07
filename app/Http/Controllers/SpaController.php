@@ -18,9 +18,9 @@ class SpaController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    //  一覧ページ表示
-    public function index() {
-        return view('index');
+    //  マップページ表示
+    public function map() {
+        return view('map');
     }
 
     // マップ登録ページ表示
@@ -72,4 +72,10 @@ class SpaController extends Controller
         $contacts->save();
         return view('/create', compact('contacts'));
     }
+    
+    public function index() {
+        return view('index');
+    }
 }
+
+

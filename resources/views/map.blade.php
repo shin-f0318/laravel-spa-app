@@ -8,8 +8,8 @@
     <title>お気に入り投稿一覧</title>
 </head>
 @section('content')
-<link rel="stylesheet" href={{ asset('css/index.css') }}>
-<script src="{{ asset('/js/serch.js') }}"></script>
+<link rel="stylesheet" href={{ asset('css/map.css') }}>
+<script src="{{ asset('/js/map.js') }}"></script>
 <body>
     <main>
         <article>
