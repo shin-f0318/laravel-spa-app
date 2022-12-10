@@ -19,7 +19,7 @@ h3 {
 /* 登録フォーム */
 /* テーブル全体 */
 table {
-    width:700px;
+    width:750px;
     text-align: center;
     border-collapse: collapse;
 }
@@ -32,11 +32,26 @@ td {
     border-bottom: solid 1px #748ca5;
 }
 
+.latLngAddress {
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: transparent;
+    text-align: center;
+}
+
+.form-control {
+    border: none;
+    outline: black;
+    width: 100%;
+    background-color: transparent;
+    text-align: center;
+}
 /* ラジオボタン */
 .radioBtn>label{
     display: block;
     padding: 5px;
-    text-align: left;
+    text-align: center;
     cursor: pointer;
 }
 .radioBtn>label:hover{
@@ -49,7 +64,7 @@ td {
 
 /* 送信・取消ボタン */
 .spa_btn {
-    background-color: white;
+    background-color: transparent;
     color: black;
     border: 1px solid black;
     padding: 5px 20px;

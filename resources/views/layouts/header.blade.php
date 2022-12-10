@@ -21,9 +21,20 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ms-auto">
                     <!-- Authentication Links -->
+                    <li class="nav-item">
+                        <a class='nav-link' href="{{ url('serch') }}">湯屋なう登録</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link' href="{{ url('map') }}">湯屋まっぷ</a>
+                    </li>
 
                     <li class="nav-item">
                         <a class='nav-link' href="{{ url('login') }}">お問合せ</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link' href="{{ url('index') }}">お問合せ一覧</a>
                     </li>
 
                     @guest

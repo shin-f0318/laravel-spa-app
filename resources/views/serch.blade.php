@@ -33,11 +33,11 @@
                         <th>項目</th>
                         <th>登録情報</th>
                     </tr>
-                    <tr><td>緯度</td><td><input id="id_lat" name="spa_lat"></td></tr>
-                    <tr><td>経度</td><td><input id="id_lng" name="spa_lng"></td></tr>
+                    <tr><td>緯度</td><td><input type="text" id="id_lat" name="spa_lat" class="latLngAddress" readonly></td></tr>
+                    <tr><td>経度</td><td><input type="text" id="id_lng" name="spa_lng" class="latLngAddress" readonly></td></tr>
                     <tr>
                         <td>登録住所</td>
-                        <td><input id="id_address" name="spa_address"></td>
+                        <td><input type="text" id="id_address" name="spa_address" class="latLngAddress" readonly></td>
                     </tr>
 
                     <tr>
@@ -57,12 +57,12 @@
                     </tr>
                     <tr>
                         <td>料金</td>
-                        <td><input type="number" class="from-control" name="spa_price" placeholder="料金を入力してください"></td>
+                        <td><input type="number" class="form-control" name="spa_price" placeholder="料金を入力してください"></td>
                     </tr>
 
                     <tr>
-                        <td>特徴・感想</td>
-                        <td><textarea class="form-control" name="spa_point" placeholder="施設の特徴や感想を入力してください"></textarea></td>
+                        <td>特徴・レビュー</td>
+                        <td><textarea class="form-control" name="spa_point" placeholder="施設の特徴やレビューを入力してください"></textarea></td>
                     </tr>
                     
                     <td>登録</td>

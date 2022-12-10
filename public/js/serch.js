@@ -6,6 +6,42 @@ function initMap() {
     zoom: 12,
     // マップの種類
     mapTypeId: "roadmap",
+
+    styles: [
+      //全てのラベルを非表示
+      {
+        featureType: 'all',
+        elementType: 'labels',
+        stylers: [
+          {visibility: 'off'},
+        ],
+      },
+      {
+        featureType: 'transit',
+        elementType: 'labels',
+        stylers: [
+          {visibility: 'on'},
+        ],
+      },
+      //poi=観光スポットや施設など」のアイコンのみ再表示
+      {
+        featureType: 'poi',
+        elementType: 'labels.icon',
+        stylers: [
+          {visibility: 'inherit'},
+        ],
+      },
+      //地図全体の色味をカスタマイズ
+      //基本色を赤に統一 + 彩度を落とす
+      {
+        featureType: 'all',
+        elementType: 'all',
+        stylers: [
+          {hue: '#5f0285'},
+          {saturation : -50},
+        ],
+      }
+    ]
   });
 
 // クリック動作

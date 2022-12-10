@@ -39,7 +39,7 @@ class SpaController extends Controller
         $spas->spa_price = $request->input('spa_price');
         $spas->spa_point = $request->input('spa_point');
         $spas->save();
-        return view('/index', compact('spas'));
+        return view('/map', compact('spas'));
     }
 
 
@@ -70,11 +70,12 @@ class SpaController extends Controller
         $contacts->tel = $request->input('tel');
         $contacts->contactText = $request->input('contactText');
         $contacts->save();
-        return view('/create', compact('contacts'));
+        return redirect()->route('index')->with('flash_message', '投稿が完了しました。');
     }
     
     public function index() {
-        return view('index');
+        $contacts = Contact::get();
+        return view('index', compact('contacts'));
     }
 }
 

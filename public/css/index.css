@@ -1,0 +1,54 @@
+/* 背景 */
+body {
+    background-image: url(../img/washi.png);
+    font-family: "Hannotate SC";
+}
+
+h1 {
+    position: relative;
+    display: inline-block;
+    padding: 0 55px;
+}
+  
+h1:before, h1:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 45px;
+    height: 2px;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+}
+
+h1:before {
+    left:0;
+}
+h1:after {
+    right: 0;
+}
+
+.contact {
+    width: 960px;/*横幅*/
+    margin: 0 auto;/*中央寄せ*/
+    padding: 60px 0;
+}
+  
+.contact-table {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+  
+
+.contact-body {
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+  
+.contact-item {
+    text-align: left; /* テキスト左寄せ */
+    padding: 20px;
+    background-color: #eee; /* グレーの背景色 */
+    border: 1px solid #ccc;
+}

@@ -34,11 +34,11 @@
                 </th>
                 <td class="contact-body">
                   <label class="contact-sex">
-                    <input type="radio" id="sexInput" name="sex" value="男">
+                    <input type="radio" id="sexInput" name="sex" value="男性">
                     <span class="contact-sex-txt">男性</span>
                   </label>
                   <label class="contact-sex">
-                    <input type="radio" id="sexInput" name="sex" value="女">
+                    <input type="radio" id="sexInput" name="sex" value="女性">
                     <span class="contact-sex-txt">女性</span>
                   </label>
                   <p id="errorMessage1"></p>

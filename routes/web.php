@@ -22,9 +22,11 @@ Route::get('/map', [SpaController::class, 'map'])->name('map');
 Route::get('/serch', [SpaController::class, 'serch'])->name('serch');
 Route::post('/serch', [SpaController::class, 'map_store'])->name('map_store');
 
-// お問合せ
+// お問合せページ
 Route::get('/create', [SpaController::class, 'create'])->name('create');
 Route::post('/create', [SpaController::class, 'store'])->name('store');
+
+// お問合せ一覧ページ
 Route::get('/index', [SpaController::class, 'index'])->name('index');
 
 
