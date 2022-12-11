@@ -110,3 +110,22 @@ td {
     height: 75%;
     border: 1px solid black;
 }
+
+/* 検索 */
+#pac-input {
+    background-color: #fff;
+    font-family: "Hannotate SC";
+    font-size: 18px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 17px;
+    text-overflow: ellipsis;
+    width: 400px;
+    height: 40px;
+}
+  
+#pac-input:focus {
+    border-color: none;
+    outline: black;
+    cursor: pointer;
+}

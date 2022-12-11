@@ -20,7 +20,7 @@
               id="pac-input"
               class="controls"
               type="text"
-              placeholder="Search Box"
+              placeholder="検索"
             >
             <!-- 地図を表示する領域 -->
             <div id="map-container">

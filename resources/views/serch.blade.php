@@ -77,10 +77,10 @@
         <br>
     </div>
     <input
-      id="pac-input"
-      class="controls"
-      type="text"
-      placeholder="Search Box"
+        id="pac-input"
+        class="controls"
+        type="text"
+        placeholder="検索"
     >
     <!-- 地図を表示する領域 -->
     <div id="map-container">
