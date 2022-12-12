@@ -32,10 +32,12 @@
             and consistent behavior across browsers, consider loading using Promises
             with https://www.npmjs.com/package/@googlemaps/js-api-loader.
             -->
-            <script
-              {{-- src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe3QyTBQBRbazc1cffB3BE3mjEBIdKbkw&callback=initMap&v=weekly"
+            {{-- <script
               src="https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDe3QyTBQBRbazc1cffB3BE3mjEBIdKbkw"
-              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe3QyTBQBRbazc1cffB3BE3mjEBIdKbkw&libraries=places&callback=initAutocomplete" --}}
+              async
+              defer
+            ></script> --}}
+            <script
               src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe3QyTBQBRbazc1cffB3BE3mjEBIdKbkw&callback=initMap&libraries=places"
               async
               defer

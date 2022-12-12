@@ -11,6 +11,7 @@
 
 @section('content')
 <link rel="stylesheet" href={{ asset('css/top.css') }}>
+<script src="{{ asset('/js/top.js') }}"></script>
 <body>
     <section>
         
@@ -20,6 +21,8 @@
             <div class="flex-item">
                 <div class="image-wrap">
                     <img class="onsen-photo" src="{{ asset('/img/onsen.jpg') }}">
+                    <img class="onsen-photo" src="{{ asset('/img/onsen1.jpg') }}">
+                    <img class="onsen-photo" src="{{ asset('/img/onsen2.jpg') }}">
                 </div>
             </div>
             <div class="flex-item">

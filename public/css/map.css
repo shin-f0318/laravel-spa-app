@@ -4,6 +4,10 @@ body {
     font-family: "Hannotate SC";
 }
 
+h1 {
+    font-weight: bold;
+}
+
 /* map */
  /* Set the size of the div element that contains the map */
 /* 
