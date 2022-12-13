@@ -121,4 +121,21 @@ function initMap() {
     });
     map.fitBounds(bounds);
   });
+
+  // DB情報の取得(ajax)
+  var markerD = [];
+  $(fuction(){
+    $ajax({
+      type: "POST",
+      url: "",
+      dataType: "json",
+      success: function(data){
+        markerD = data;
+        setMarker(markerD);
+      },
+      error: function(XMLHttpRequest, textStatus, errorThrown){
+        alert('Error : ' + errorThrow);
+      }
+    });
+  });
 }

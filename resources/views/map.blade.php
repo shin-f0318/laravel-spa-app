@@ -25,24 +25,37 @@
             <!-- 地図を表示する領域 -->
             <div id="map-container">
                 <div id="map"></div>
-            </div>
+          </div>
             <!-- 
             The `defer` attribute causes the callback to execute after the full HTML
             document has been parsed. For non-blocking uses, avoiding race conditions,
             and consistent behavior across browsers, consider loading using Promises
             with https://www.npmjs.com/package/@googlemaps/js-api-loader.
             -->
-            {{-- <script
-              src="https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDe3QyTBQBRbazc1cffB3BE3mjEBIdKbkw"
-              async
-              defer
-            ></script> --}}
+
+            <!-- MarkerCluster -->
+            <script 
+            src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+            </script>
+
             <script
               src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe3QyTBQBRbazc1cffB3BE3mjEBIdKbkw&callback=initMap&libraries=places"
               async
               defer
             ></script>
-            </div>
+
+            <script
+              src="https://code.jquery.com/jquery-2.1.1.js" integrity="sha256-FA/0OOqu3gRvHOuidXnRbcmAWVcJORhz+pv3TX2+U6w=" crossorigin="anonymous">
+            </script>
+
+          </div>
+          
+          <table>
+            <tr>
+              
+            </tr>
+          </table>
+
         </article>
     </main>
 </body>

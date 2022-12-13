@@ -47,21 +47,12 @@ function initMap() {
 // 検索機能
   const input = document.getElementById("pac-input");
   const searchBox = new google.maps.places.SearchBox(input);
- ////"SearchBoxクラス"はPlacesライブラリのメソッド。引数はinput(ドキュメント上ではinputFieldとある)。
- ////[https://developers.google.com/maps/documentation/javascript/reference/places-widget#SearchBox]
 
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-  ////"ControlPosition"クラスはコントローラーの位置を定める。
-  ////https://lab.syncer.jp/Web/API/Google_Maps/JavaScript/ControlPosition/
-  ////https://developers.google.com/maps/documentation/javascript/examples/control-positioning
 
   map.addListener("bounds_changed", () => {
     searchBox.setBounds(map.getBounds());
   });
-  ////"bound_changed"イベントは(見えてる範囲の地図･ビューポートに変化があったときに発火)
-  ////https://lab.syncer.jp/Web/API/Google_Maps/JavaScript/Map/bounds_changed/ 
-  ////"getBounds"メソッドはビューポートの境界を取得。Mapクラスのメソッド。
-  ////https://lab.syncer.jp/Web/API/Google_Maps/JavaScript/Map/getBounds/
 
   let markers = [];
   searchBox.addListener("places_changed", () => {
@@ -204,6 +195,9 @@ function initMap() {
       // htmlへ変数の送信
       document.getElementById('id_address').value = address;
     });
+
+
+    
 }
 
 window.initMap = initMap;
