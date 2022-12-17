@@ -44,10 +44,6 @@
               defer
             ></script>
 
-            <script
-              src="https://code.jquery.com/jquery-2.1.1.js" integrity="sha256-FA/0OOqu3gRvHOuidXnRbcmAWVcJORhz+pv3TX2+U6w=" crossorigin="anonymous">
-            </script>
-
           </div>
           
           <table>
