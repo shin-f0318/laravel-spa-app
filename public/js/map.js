@@ -126,8 +126,8 @@ function initMap() {
   var markerD = [];
   $(function(){
     $.ajax({
-      type: "POST",
-      url: "",
+      type: "get",
+      url: "http://127.0.0.1:8080/spa",
       dataType: "json",
       success: function(data){
         markerD = data;
