@@ -44,6 +44,8 @@
               defer
             ></script>
 
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
           </div>
           
           <table>
@@ -54,6 +56,32 @@
 
         </article>
     </main>
+    <?php
+
+      //ヘッダー情報の設定
+      header("Content-Type: application/json; charset=utf-8");
+
+      $data = array();
+
+      // DB接続情報
+      $host = "localhost:8889";
+      $dbname = "laravel_spa_app";
+      $user = "root";
+      $pass = "root";
+
+      // DB接続情報設定・SQL準備・接続
+      $dbh = new PDO($host .$dbname . 'charset=utf8', $user, $pass);
+
+      $sql = "spa_lat, spa_lng, spa_address, spa_name, spa_type, spa_price, spa_point";
+      $sth = $dbh -> prepare($sql);
+      $sth -> execute();
+
+      //データを取得する
+      $data = $sth -> fetchAll(PDO::FETCH_ASSOC);
+
+      //jsonオブジェクト化
+      echo json_encode($data);
+    ?>
 </body>
 </html>
 @endsection

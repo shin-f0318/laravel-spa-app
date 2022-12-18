@@ -2,7 +2,7 @@ function initMap() {
   //マップの初期設定です。
   var map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 35.6811673, lng: 139.7670516 },
-    zoom: 7,
+    zoom: 8,
     mapTypeId: "roadmap",
     // マップのスタイル変更
     styles: [
@@ -128,6 +128,7 @@ function initMap() {
     $.ajax({
       type: "get",
       url: "http://127.0.0.1:8080/spa",
+      data: data,
       dataType: "json",
       success: function(data){
         markerD = data;

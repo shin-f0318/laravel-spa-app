@@ -9,7 +9,8 @@ use App\Models\Spa;
 class SpaApiController extends Controller
 {
     public function index () {
-        $spas=Spa::all();
-        return $spas;
+        $spas=Spa::get();
+
+        return view('map', compact('spas'));;
     }
 }
