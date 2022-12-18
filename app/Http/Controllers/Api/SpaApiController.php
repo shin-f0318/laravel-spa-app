@@ -10,7 +10,6 @@ class SpaApiController extends Controller
 {
     public function index () {
         $spas=Spa::get();
-
-        return view('map', compact('spas'));;
+        return $spas;
     }
 }
