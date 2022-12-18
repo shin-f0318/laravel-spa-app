@@ -20,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // Apiルーティング
-Route::get('/spa', [SpaApiController::class, 'index']);
+Route::get('/api/spa', [SpaApiController::class, 'index']);

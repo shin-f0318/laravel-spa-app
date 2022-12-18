@@ -125,11 +125,13 @@ function initMap() {
   // DB情報の取得(ajax)
   var markerD = [];
   $(function(){
+    console.log("ajax");
     $.ajax({
       type: "get",
-      url: "http://127.0.0.1:8080/spa",
+      url: "http://127.0.0.1:8080/api/spa",
       dataType: "json",
       success: function(data){
+        console.log(data);
         markerD = data;
         setMarker(markerD);
       },
