@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SpaApiController;
+use App\Http\Controllers\Api\SpaApiController;
 
 /*
 |--------------------------------------------------------------------------
