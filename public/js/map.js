@@ -141,17 +141,18 @@ function initMap() {
     });
   });
   
-  function setMarker(markerData) {
-    // console.log(markerData);
-    // console.log(markerData.length);
+  var map;
+  var infoWindow = [];
+  
+  function setMarker(markerD) {
 
     // マーカー作成
     var icon;
 
-    for (var i = 0; i < markerData.length; i++) {
+    for (i = 0; i < markerD.length; i++) {
 
-      var latNum = parseFloat(markerData[i]['spa_lat']);
-      var lngNum = parseFloat(markerData[i]['spa_lng']);
+      var latNum = parseFloat(markerD[i]['spa_lat']);
+      var lngNum = parseFloat(markerD[i]['spa_lng']);
 
       // マーカー位置セット
       var markerLatLng = new google.maps.LatLng({
@@ -160,7 +161,7 @@ function initMap() {
       });
       
       // マーカーのセット
-      marker[i] = new google.maps.Marker({
+      markerD[i] = new google.maps.Marker({
         position: markerLatLng,          // マーカーを立てる位置を指定
         map: map,                        // マーカーを立てる地図を指定
         icon: icon                       // アイコン指定
@@ -168,25 +169,25 @@ function initMap() {
 
       // 吹き出しの追加
       infoWindow[i] = new google.maps.InfoWindow({
-        content: markerData[i]['spa_type'] + ':' + markerData[i]['spa_name'] + '<br><br>' + markerData[i]['text'] + '<br><br>' + markerData[i]['img']
+        content: markerD[i]['spa_type'] + ':' + markerD[i]['spa_name'] + '<br><br>' + markerD[i]['text'] + '<br><br>' + markerD[i]['img']
       });
       
       // マーカーにクリックイベントを追加
       markerEvent(i);
     }
 
-    // Marker clusterの追加
-    var markerCluster = new MarkerClusterer(
-      map,
-      marker,
-      {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'}
-    );
+    // // Marker clusterの追加
+    // var markerCluster = new MarkerClusterer(
+    //   map,
+    //   markerD,
+    //   {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'}
+    // );
   }
 
   var openWindow;
 
   function markerEvent(i) {
-    marker[i].addListener('click', function() {
+    markerD[i].addListener('click', function() {
       myclick(i);
     });
   }
@@ -195,7 +196,7 @@ function initMap() {
     if(openWindow){
       openWindow.close();
     }
-    infoWindow[i].open(map, marker[i]);
+    infoWindow[i].open(map, markerD[i]);
     openWindow = infoWindow[i];
   }
 
