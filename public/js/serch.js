@@ -97,20 +97,16 @@ function initMap() {
       }));
 
       if (place.geometry.viewport) {
-        ////viewport"メソッド
-        // Only geocodes have viewport.
+
         bounds.union(place.geometry.viewport);
-        ////"union"メソッドはLatLngBoundsクラスのメソッド。自身の境界に指定した境界を取り込んで合成する。
-        ////https://lab.syncer.jp/Web/API/Google_Maps/JavaScript/LatLngBounds/union/
+
       } else {
         bounds.extend(place.geometry.location);
-        ////"extend"メソッドはLatLngBoundsクラスのメソッド。自身の境界に新しく位置座標を追加する。
-        ////https://lab.syncer.jp/Web/API/Google_Maps/JavaScript/LatLngBounds/extend/
+
       }
     });
     map.fitBounds(bounds);
-    ////"fitBounds"メソッドはmapクラスのメソッド。指定した境界を見えやすい位置にビューポートを変更する。
-    ////https://lab.syncer.jp/Web/API/Google_Maps/JavaScript/Map/fitBounds/#:~:text=Map.fitBounds()%E3%81%AFMap,%E5%A4%89%E6%9B%B4%E3%81%97%E3%81%A6%E3%81%8F%E3%82%8C%E3%81%BE%E3%81%99%E3%80%82
+  
   });
   // クリック動作
   google.maps.event.addListener(map, 'click', event => clickListener(event, map));

@@ -177,7 +177,7 @@ function initMap() {
       });
 
       // サイドバー
-      sidebar_html += '<a href="javascript:myclick(' + i + ')">' + markerData[i]['spa_name'] + '<\/a><br />';
+      sidebar_html += '<a href="javascript:myclick(' + i + ')">' + marker[i]['name'] + '<\/a><br />';
 
 
       // マーカーにクリックイベントを追加

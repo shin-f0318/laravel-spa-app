@@ -24,7 +24,12 @@
             >
             <!-- 地図を表示する領域 -->
             <div id="map-container">
-                <div id="map"></div>
+              <table>
+                <tr>
+                  <td><div id="map"></div></td>
+                  <td><div id="sidebar"></div></td>
+                </tr>
+              </table>
           </div>
             <!-- 
             The `defer` attribute causes the callback to execute after the full HTML

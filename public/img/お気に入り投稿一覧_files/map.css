@@ -27,7 +27,8 @@ h1 {
     padding: 50px;
     top: 0;
     left: 0;
-    width: 85%;
+    right: 30%;
+    width: 100%;
     height: 80%;
     border: 1px solid black;
 }
@@ -57,7 +58,7 @@ h1 {
     background-color: transparent;
     padding: 6px;
     top: 0;
-    width: 15%;
+    width: 20%;
     right: 0;
     height: 80%;
     border: 1px solid black;
