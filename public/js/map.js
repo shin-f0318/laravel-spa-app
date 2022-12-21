@@ -170,12 +170,22 @@ function initMap() {
         lng: lngNum
       });
       
+
+      // マーカーアイコンをtypeによって変更する
+      if (marker[i]['spa_type'] === '温泉') {
+        icon = new google.maps.MarkerImage('/img/spa_logo.png');
+      } else if (marker[i]['spa_type'] === '銭湯') {
+        icon = new google.maps.MarkerImage('/img/sento_logo.png');
+      } else if (marker[i]['spa_type'] === 'サウナ') {
+        icon = new google.maps.MarkerImage('/img/sauna_logo.png');
+      }
+
+
       // マーカーのセット
       marker[i] = new google.maps.Marker({
         position: markerLatLng,          // マーカーを立てる位置を指定
         map: map,                        // マーカーを立てる地図を指定
         icon: {
-          url: '/img/spa_logo.png',
           scaledSize: new google.maps.Size(25, 25)
         }                   // アイコン指定
 
@@ -188,7 +198,6 @@ function initMap() {
 
       // サイドバー
       sidebar_html += '・' + '<a href="javascript:myclick(' + i + ')">' + markerData[i]['spa_name'] + '<\/a><br />';
-
 
       // マーカーにクリックイベントを追加
       markerEvent(i);
