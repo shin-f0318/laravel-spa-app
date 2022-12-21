@@ -42,14 +42,20 @@ function initMap() {
     ]
   });
 
+  
   // 位置情報取得
   function success(pos) {
     var lat = pos.coords.latitude;
     var lng = pos.coords.longitude;
     var latlng = new google.maps.LatLng(lat, lng); //中心の緯度, 経度
+    var icon = {
+      url: '/img/human.png',
+      scaledSize: new google.maps.Size(30, 30)
+    }
     var marker = new google.maps.Marker({
       position: latlng, //マーカーの位置（必須）
-      map: map //マーカーを表示する地図
+      map: map, //マーカーを表示する地図
+      icon,
     });
   }
   function fail(error) {
@@ -168,16 +174,20 @@ function initMap() {
       marker[i] = new google.maps.Marker({
         position: markerLatLng,          // マーカーを立てる位置を指定
         map: map,                        // マーカーを立てる地図を指定
-        icon: icon                    // アイコン指定
+        icon: {
+          url: '/img/spa_logo.png',
+          scaledSize: new google.maps.Size(25, 25)
+        }                   // アイコン指定
+
       });
 
       // 吹き出しの追加
       infoWindow[i] = new google.maps.InfoWindow({
-        content: markerData[i]['spa_type'] + ':' + markerData[i]['spa_name'] + '<br><br>' + markerData[i]['spa_point']
+        content: '住所:' + markerData[i]['spa_address'] + '<br><br>' + markerData[i]['spa_type'] + ':' + markerData[i]['spa_name'] + '<br><br>' + '料金:' + markerData[i]['spa_price'] + '円' + '<br><br>' + '特徴:' + markerData[i]['spa_point']
       });
 
       // サイドバー
-      sidebar_html += '<a href="javascript:myclick(' + i + ')">' + markerData[i]['spa_name'] + '<\/a><br />';
+      sidebar_html += '・' + '<a href="javascript:myclick(' + i + ')">' + markerData[i]['spa_name'] + '<\/a><br />';
 
 
       // マーカーにクリックイベントを追加

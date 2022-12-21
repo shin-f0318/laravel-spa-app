@@ -57,14 +57,19 @@
                     </tr>
                     <tr>
                         <td>料金</td>
-                        <td><input type="number" class="form-control" name="spa_price" placeholder="料金を入力してください"></td>
+                        <td><input type="number" class="form-control" name="spa_price"  placeholder="料金を入力してください"></td>
                     </tr>
 
                     <tr>
                         <td>特徴・レビュー</td>
                         <td><textarea class="form-control" name="spa_point" placeholder="施設の特徴やレビューを入力してください"></textarea></td>
                     </tr>
-                    
+
+                    {{-- <tr>
+                        <td>写真</td>
+                        <td><input type="file" class="form-control" name="spa_photo"></td>
+                    </tr> --}}
+
                     <td>登録</td>
                     <td><input type="submit" class="spa_btn" value="登録">
                         <input type="reset" class="spa_btn" value="取消">
