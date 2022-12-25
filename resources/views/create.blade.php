@@ -24,7 +24,6 @@
                 </th>
                 <td class="contact-body">
                     <input type="text" id="nameInput" name="name" placeholder="入力してください" class="form-text">
-                    <p id="errorMessage"></p>
                 </td>
             </tr>
 
@@ -51,7 +50,6 @@
                 </th>
                 <td class="contact-body">
                   <input type="email" id="mailInput" name="mail" class="form-text" placeholder="入力してください">
-                  <p id="errorMessage2"></p>
                 </td>
             </tr>
 
@@ -61,7 +59,6 @@
                 </th>
                 <td class="contact-body">
                   <input type="tel" id="telInput" name="tel" class="form-text" placeholder="入力してください">
-                  <p id="errorMessage3"></p>
                 </td>
             </tr>
               
@@ -71,7 +68,6 @@
                 </th>
                 <td class="contact-body">
                   <textarea id="textInput" name="contactText" class="form-textarea"></textarea>
-                  <p id="errorMessage4"></p>
                 </td>
             </tr>
         </table>

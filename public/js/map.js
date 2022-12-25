@@ -1,3 +1,8 @@
+//initMap関数とmyclick関数の両方を使えるので、この2つはグローバル変数に対応
+var infoWindow = [];
+var marker = [];
+
+//最初の画面表示時に呼ばれる関数。この中にmyclick関数を入れても動作しないので、initMap関数から除外する。
 function initMap() {
   //マップの初期設定です。
   var map = new google.maps.Map(document.getElementById("map"), {
@@ -21,7 +26,7 @@ function initMap() {
           {visibility: 'on'},
         ],
       },
-      //poi=観光スポットや施設など」のアイコンのみ再表示
+      //poi=観光スポットや施設などのアイコンのみ再表示
       {
         featureType: 'poi',
         elementType: 'labels.icon',
@@ -127,10 +132,8 @@ function initMap() {
  
   var spaData = [];
   var map;
-  var marker = [];
-  var infoWindow = [];
+ 
   var sidebar_html = "";
-  var openWindow;
 
    // DB情報の取得(ajax)
   $(function(){
@@ -191,12 +194,14 @@ function initMap() {
 
       // サイドバー
       sidebar_html += '・' + '<a href="javascript:myclick(' + i + ')">' + markerData[i]['spa_name'] + '<\/a><br />';
+      
 
       // マーカーにクリックイベントを追加
       markerEvent(i);
       
     }
 
+    console.log(sidebar_html);
     // サイドバー
     document.getElementById("sidebar").innerHTML = sidebar_html;
 
@@ -208,12 +213,14 @@ function initMap() {
     });
   }
 
-  function myclick(i) {
-    if(openWindow){
-      openWindow.close();
-    }
-    infoWindow[i].open(map, marker[i]);
-    openWindow = infoWindow[i];
-  }
+}
 
+//myclickはクリック時に呼ばれる関数のため、initMap関数内から外す。
+function myclick(i) {
+  var openWindow;
+  if(openWindow){
+    openWindow.close();
+  }
+  infoWindow[i].open(map, marker[i]);
+  openWindow = infoWindow[i];
 }
