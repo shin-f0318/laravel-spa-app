@@ -58,13 +58,9 @@ function initMap() {
       icon,
     });
   }
+
   function fail(error) {
     alert('位置情報の取得に失敗しました。エラーコード：' + error.code);
-    var latlng = new google.maps.LatLng(35.6812405, 139.7649361); //東京駅
-    // var map = new google.maps.Map(document.getElementById('map'), {
-    //   zoom: 10,
-    //   center: latlng
-    // });
   }
   navigator.geolocation.getCurrentPosition(success, fail);
 
@@ -103,7 +99,7 @@ function initMap() {
       console.log("Returned place contains no geometry");
       return;
     }
-    const icon = {
+    var icon = {
       url: place.icon,
       size: new google.maps.Size(71, 71),
       origin: new google.maps.Point(0, 0),
@@ -158,6 +154,7 @@ function initMap() {
 
     // マーカー作成
     var icon;
+    
 
     for (var i = 0; i < markerData.length; i++) {
 
@@ -170,25 +167,21 @@ function initMap() {
         lng: lngNum
       });
       
-
+      
       // マーカーアイコンをtypeによって変更する
-      if (marker[i]['spa_type'] === '温泉') {
-        icon = new google.maps.MarkerImage('/img/spa_logo.png');
-      } else if (marker[i]['spa_type'] === '銭湯') {
+      if (markerData[i]['spa_type'] === '温泉') {
+        icon = new google.maps.MarkerImage('/img/onsen_logo.png');
+      } else if (markerData[i]['spa_type'] === '銭湯') {
         icon = new google.maps.MarkerImage('/img/sento_logo.png');
-      } else if (marker[i]['spa_type'] === 'サウナ') {
+      } else if (markerData[i]['spa_type'] === 'サウナ') {
         icon = new google.maps.MarkerImage('/img/sauna_logo.png');
       }
-
 
       // マーカーのセット
       marker[i] = new google.maps.Marker({
         position: markerLatLng,          // マーカーを立てる位置を指定
         map: map,                        // マーカーを立てる地図を指定
-        icon: {
-          scaledSize: new google.maps.Size(25, 25)
-        }                   // アイコン指定
-
+        icon: icon,
       });
 
       // 吹き出しの追加

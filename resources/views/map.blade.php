@@ -38,11 +38,6 @@
             with https://www.npmjs.com/package/@googlemaps/js-api-loader.
             -->
 
-            <!-- MarkerCluster -->
-            <script 
-            src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-            </script>
-
             <script
               src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe3QyTBQBRbazc1cffB3BE3mjEBIdKbkw&callback=initMap&libraries=places"
               async
