@@ -4,7 +4,7 @@
         <div class="container">
             <a class="logo"><img src="{{ asset('img/spa_logo.png') }}" alt="ロゴ"></a>
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
+                {{ config('app.name', '湯屋なう') }}
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

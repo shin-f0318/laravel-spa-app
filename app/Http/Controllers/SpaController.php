@@ -43,8 +43,6 @@ class SpaController extends Controller
     }
 
 
-
-
     // お問合せ画面
     /**
      * Show the form for creating a new resource.
