@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Spa;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class SpaController extends Controller
 {
@@ -20,6 +21,7 @@ class SpaController extends Controller
 
     //  マップページ表示
     public function map() {
+	Log::info('mapにアクセスしました。');    
         return view('map');
     }
 
