@@ -140,7 +140,7 @@ function initMap() {
     console.log("ajax");
     $.ajax({
       type: "get",
-      url: "http://127.0.0.1:8080/api/spa",
+      url: "spa-db.csenkvw21pen.ap-northeast-1.rds.amazonaws.com",
       dataType: "json",
       success: function(data){
         console.log(data);
