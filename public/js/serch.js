@@ -186,6 +186,5 @@ function initMap() {
   
       // htmlへ変数の送信
       document.getElementById('id_address').value = address;
-    });
+    }); 
 }
-

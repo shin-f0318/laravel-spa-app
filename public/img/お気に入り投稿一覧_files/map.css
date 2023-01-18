@@ -1,0 +1,66 @@
+/* 背景 */
+body {
+    background-image: url(../img/washi.png);
+    font-family: "Hannotate SC";
+}
+
+h1 {
+    font-weight: bold;
+}
+
+/* map */
+ /* Set the size of the div element that contains the map */
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+ #map-container {
+    position: relative;
+    margin: 30px;
+    padding-bottom: 90%;
+    height: 0;
+    overflow: hidden;
+}
+  
+#map {
+    position: absolute;
+    padding: 50px;
+    top: 0;
+    left: 0;
+    right: 30%;
+    width: 100%;
+    height: 80%;
+    border: 1px solid black;
+}
+
+/* 検索 */
+#pac-input {
+    background-color: #fff;
+    font-family: "Hannotate SC";
+    font-size: 18px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 17px;
+    text-overflow: ellipsis;
+    width: 400px;
+    height: 40px;
+}
+  
+#pac-input:focus {
+    border-color: none;
+    outline: black;
+    cursor: pointer;
+}
+
+#sidebar {
+    text-align: center;
+    position: absolute;
+    background-color: transparent;
+    padding: 6px;
+    top: 0;
+    width: 20%;
+    right: 0;
+    height: 80%;
+    border: 1px solid black;
+    overflow: auto;
+}
