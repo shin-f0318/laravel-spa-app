@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>湯屋なう</title>
-    
 </head>
 
 @section('content')
+{{-- CSS --}}
 <link rel="stylesheet" href={{ asset('css/top.css') }}>
-<script src="{{ asset('/js/top.js') }}"></script>
 <body>
     <section>
         
@@ -21,8 +20,6 @@
             <div class="flex-item">
                 <div class="image-wrap">
                     <img class="onsen-photo" src="{{ asset('/img/onsen.jpg') }}">
-                    {{-- <img class="onsen-photo" src="{{ asset('/img/onsen1.jpg') }}">
-                    <img class="onsen-photo" src="{{ asset('/img/onsen2.jpg') }}"> --}}
                 </div>
             </div>
             <div class="flex-item">
@@ -32,11 +29,13 @@
             </div>
         </div>
         
-        
-
         <div class="btn-container">
             <button class="btn" onclick="location.href='{{ route('serch') }}' ">登録する</button>
         </div>
+
+    </section>
+
+    <section>
 
         <div class="explanation">
             <p><span class="main-text">湯屋なう</span>とは？</p>
@@ -46,6 +45,7 @@
                 新たなお店の発見やお気に入りの場所を登録してみんなの湯屋まっぷを作成していこう。
             </p>
         </div>
+
     </section>
 
     <section>
@@ -68,9 +68,11 @@
                     </div>
                 </div>
             </div>
+            
     </section>
+
+    {{-- JavaScript --}}
+    <script src="{{ asset('/js/top.js') }}"></script>
 </body>
-
 </html>
-
 @endsection

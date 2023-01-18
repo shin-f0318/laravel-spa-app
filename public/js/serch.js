@@ -1,3 +1,6 @@
+'use strict';
+
+// マップ表示
 function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
     // マップの中心を設定
@@ -23,7 +26,7 @@ function initMap() {
           {visibility: 'on'},
         ],
       },
-      //poi=観光スポットや施設など」のアイコンのみ再表示
+      //poi=観光スポットや施設などのアイコンのみ再表示
       {
         featureType: 'poi',
         elementType: 'labels.icon',
@@ -63,16 +66,16 @@ function initMap() {
   if (places.length == 0) {
       return;
   }
-  // Clear out the old markers.
+  // 古いマーカーを削除
   markers.forEach((marker) => {
     //"forEach"メソッドは引数にある関数へ、Mapオブジェクトのキー/値を順に代入･関数の実行をする。
       marker.setMap(null);
       //setMapメソッドはMarker(Polyline,Circleなど)クラスのメソッド。Markerを指定した位置に配置する。引数nullにすると地図から取り除く。
     });
   markers = [];
-  // For each place, get the icon, name and location.
+  // 場所について、アイコン、名前、場所を取得します。
   const bounds = new google.maps.LatLngBounds();
-  //"LatLngBounds"クラスは境界を作るインスンタンスを作成。引数は左下、右上の座標。
+  //"LatLngBounds"クラスは境界を作るインスンタンスを作成。
   places.forEach((place) => {
     if (!place.geometry) {
     //"geometry"はplaceライブラリのメソッド。
@@ -88,7 +91,7 @@ function initMap() {
       //"Point"クラスはマーカーのラベルなどの位置を決めるインスタンスメソッド。
       scaledSize: new google.maps.Size(25, 25),
       };
-      // Create a marker for each place.
+      // 各場所にマーカーを作成する。
       markers.push(new google.maps.Marker({
         map,
         icon,
@@ -108,6 +111,7 @@ function initMap() {
     map.fitBounds(bounds);
   
   });
+
   // クリック動作
   google.maps.event.addListener(map, 'click', event => clickListener(event, map));
 
@@ -141,14 +145,6 @@ function initMap() {
   }
   before_marker = marker;
   marker.setMap(map);
-
-  // // ピン削除
-  // function deleteMakers () {
-  //   if(marker != null) {
-  //     marker.setMap(null);
-	// 	  }
-	// 	  marker = null;
-	// }
 
   // 経度・緯度をLatLngクラスへ変換
   const latLngInput = new google.maps.LatLng(lat, lng);
@@ -191,10 +187,5 @@ function initMap() {
       // htmlへ変数の送信
       document.getElementById('id_address').value = address;
     });
-
-
-    
 }
-
-window.initMap = initMap;
 

@@ -88,11 +88,6 @@ td {
 
 
 /* map */
- /* Set the size of the div element that contains the map */
-/* 
- * Always set the map height explicitly to define the size of the div element
- * that contains the map. 
- */
  #map-container {
     position: relative;
     margin: 30px;

@@ -1,3 +1,5 @@
+'use strict';
+
 //initMap関数とmyclick関数の両方を使えるので、この2つはグローバル変数に対応
 var infoWindow = [];
 var marker = [];
@@ -57,7 +59,7 @@ function initMap() {
       url: '/img/human.png',
       scaledSize: new google.maps.Size(30, 30)
     }
-    var marker = new google.maps.Marker({
+    new google.maps.Marker({
       position: latlng, //マーカーの位置（必須）
       map: map, //マーカーを表示する地図
       icon,
@@ -89,7 +91,7 @@ function initMap() {
     if (places.length == 0) {
       return;
     }
-    // Clear out the old markers.
+    // 古いマーカーを削除
     markers.forEach((marker) => {
     
       marker.setMap(null);
@@ -129,7 +131,7 @@ function initMap() {
     map.fitBounds(bounds);
   });
 
- 
+  // ApiからAjaxを利用しデータを取得
   var spaData = [];
   var map;
  

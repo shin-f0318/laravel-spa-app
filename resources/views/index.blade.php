@@ -8,14 +8,15 @@
     <title>お問合せ一覧</title>
 </head>
 @section('content')
+{{-- CSS --}}
 <link rel="stylesheet" href={{ asset('css/index.css') }}>
-<script src="{{ asset('/js/index.js') }}"></script>
 <body>
     <main>
         <article>
             <div class="contact">                
                 <h1 class="contact-ttl">お問合せ一覧</h1>  
                 
+                {{-- お問合せ内容表示 --}}
                  @if (session('flash_message'))
                      <p>{{ session('flash_message') }}</p>
                  @endif
@@ -44,6 +45,9 @@
             </div>
         </article>
     </main>
+
+    {{-- JavaScript --}}
+    <script src="{{ asset('/js/index.js') }}"></script>
 </body>
 </html>
 @endsection
