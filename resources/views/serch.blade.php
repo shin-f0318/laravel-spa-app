@@ -95,15 +95,15 @@
         {{-- 地図を表示する領域 --}}
         <div id="map-container">
             <div id="map"></div>
-        </div>
-
-        {{-- 検索Box --}}
-        <input
+            
+            {{-- 検索Box --}}
+            <input
             id="pac-input"
             class="controls"
             type="text"
             placeholder="検索"
-        >
+            >
+        </div>
         
         {{--
         The `defer` attribute causes the callback to execute after the full HTML

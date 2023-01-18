@@ -1,4 +1,4 @@
-'use strict';
+
 
 //initMap関数とmyclick関数の両方を使えるので、この2つはグローバル変数に対応
 var infoWindow = [];
