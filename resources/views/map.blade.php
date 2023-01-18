@@ -41,21 +41,23 @@
             and consistent behavior across browsers, consider loading using Promises
             with https://www.npmjs.com/package/@googlemaps/js-api-loader.
             --}}
-            
-            {{-- initmap --}}
-            <script
-              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe3QyTBQBRbazc1cffB3BE3mjEBIdKbkw&callback=initMap&libraries=places"
-              async
-              defer
-            ></script>
-            
-            {{-- jQuery --}}
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
         </article>
     </main>
 
     {{-- JavaScript --}}
     <script src="{{ asset('/js/map.js') }}"></script>
+
+    {{-- initmap --}}
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe3QyTBQBRbazc1cffB3BE3mjEBIdKbkw&callback=initMap&libraries=places"
+    async
+    defer
+    ></script>
+  
+  {{-- jQuery --}}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
 </body>
 </html>
 @endsection

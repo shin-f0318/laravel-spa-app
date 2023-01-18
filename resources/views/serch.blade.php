@@ -95,7 +95,7 @@
         {{-- 地図を表示する領域 --}}
         <div id="map-container">
             <div id="map"></div>
-            
+
             {{-- 検索Box --}}
             <input
             id="pac-input"
@@ -112,16 +112,18 @@
         with https://www.npmjs.com/package/@googlemaps/js-api-loader.
         --}}
 
-        {{-- initMap --}}
-        <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe3QyTBQBRbazc1cffB3BE3mjEBIdKbkw&callback=initMap&libraries=places"
-            async
-            defer
-        ></script>
     </main>
 
     {{-- JavaScript --}}
     <script src="{{ asset('/js/serch.js') }}"></script>
+
+    {{-- initMap --}}
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe3QyTBQBRbazc1cffB3BE3mjEBIdKbkw&callback=initMap&libraries=places"
+        async
+        defer
+    ></script>
+    
 </body>
 </html>
 @endsection
