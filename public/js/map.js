@@ -140,7 +140,11 @@ function initMap() {
     console.log("ajax");
     $.ajax({
       type: "get",
+<<<<<<< HEAD
       url: "http://43.207.119.121/api/spa",
+=======
+      url: "http://127.0.0.1:8080/api/spa",
+>>>>>>> origin/main
       dataType: "json",
       success: function(data){
         console.log(data);
