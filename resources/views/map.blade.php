@@ -16,6 +16,8 @@
             <div class="container">
                 <h1>〜湯屋なう　まっぷ〜</h1>
             </div>
+            
+            <br>
 
             {{-- 地図を表示する領域 --}}
             <div id="map-container">
@@ -57,7 +59,7 @@
   
   {{-- jQuery --}}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  
+
 </body>
 </html>
 @endsection

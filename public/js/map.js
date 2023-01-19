@@ -59,6 +59,7 @@ function initMap() {
       url: '/img/human.png',
       scaledSize: new google.maps.Size(30, 30)
     }
+    
     new google.maps.Marker({
       position: latlng, //マーカーの位置（必須）
       map: map, //マーカーを表示する地図
@@ -67,8 +68,13 @@ function initMap() {
   }
 
   function fail(error) {
-    alert('位置情報の取得に失敗しました。エラーコード：' + error.code);
-  }
+		alert('位置情報の取得に失敗しました。エラーコード：' + error.code);
+		var latlng = new google.maps.LatLng(35.6812405, 139.7649361); //東京駅
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 10,
+			center: latlng
+		});
+	}
   navigator.geolocation.getCurrentPosition(success, fail);
 
   // 検索機能
@@ -142,7 +148,7 @@ function initMap() {
     console.log("ajax");
     $.ajax({
       type: "get",
-      url: "http://43.207.119.121/api/spa",
+      url: "http://35.76.37.92/api/spa",
       dataType: "json",
       success: function(data){
         console.log(data);
