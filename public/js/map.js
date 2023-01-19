@@ -70,10 +70,6 @@ function initMap() {
   function fail(error) {
 		alert('位置情報の取得に失敗しました。エラーコード：' + error.code);
 		var latlng = new google.maps.LatLng(35.6812405, 139.7649361); //東京駅
-		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 10,
-			center: latlng
-		});
 	}
   navigator.geolocation.getCurrentPosition(success, fail);
 
