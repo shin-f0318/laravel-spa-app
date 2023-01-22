@@ -144,7 +144,7 @@ function initMap() {
     console.log("ajax");
     $.ajax({
       type: "get",
-      url: "https://yuya-now.com/api/spa",
+      url: "/api/spa",
       dataType: "json",
       success: function(data){
         console.log(data);
