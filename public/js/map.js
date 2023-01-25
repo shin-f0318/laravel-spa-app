@@ -144,7 +144,7 @@ function initMap() {
     console.log("ajax");
     $.ajax({
       type: "get",
-      url: "/api/spa",
+      url: "https://35.76.37.92/api/spa",
       dataType: "json",
       success: function(data){
         console.log(data);
