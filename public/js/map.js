@@ -143,8 +143,8 @@ function initMap() {
   $(function(){
     $.ajax({
       type: "get",
-      // url: "https://yuya-now.com/api/spa",
-      url: "http://127.0.0.1:8080/api/spa",
+      url: "https://yuya-now.com/api/spa",
+      // url: "http://127.0.0.1:8080/api/spa",
       dataType: "json",
       success: function(data){
         console.log(data);
