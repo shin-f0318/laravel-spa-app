@@ -141,19 +141,16 @@ function initMap() {
 
    // DB情報の取得(ajax)
   $(function(){
-    console.log("ajax");
     $.ajax({
       type: "get",
-      url: "https://35.76.37.92/api/spa",
+      // url: "https://yuya-now.com/api/spa",
+      url: "http://127.0.0.1:8080/api/spa",
       dataType: "json",
       success: function(data){
         console.log(data);
         spaData = data;
         setMarker(spaData);
       },
-      error: function(XMLHttpRequest, textStatus, errorThrown){
-        alert('Error : ' + errorThrown);
-      }
     });
   });
   
@@ -205,7 +202,7 @@ function initMap() {
       
     }
 
-    console.log(sidebar_html);
+    // console.log(sidebar_html);
     // サイドバー
     document.getElementById("sidebar").innerHTML = sidebar_html;
 
