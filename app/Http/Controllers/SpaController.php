@@ -6,6 +6,8 @@ use App\Models\Spa;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use App\Http\Requests\SpaRequest;
+use App\Http\Requests\ContactRequest;
 
 class SpaController extends Controller
 {
@@ -31,7 +33,7 @@ class SpaController extends Controller
     }
 
     // マップ登録ページpost
-    public function map_store(Request $request) {
+    public function map_store(SpaRequest $request) {
         $spas = new Spa();
         $spas->spa_lat = $request->input('spa_lat');
         $spas->spa_lng = $request->input('spa_lng');
@@ -62,7 +64,7 @@ class SpaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
+    public function store(ContactRequest $request) {
         $contacts = new Contact();
         $contacts->name = $request->input('name');
         $contacts->sex = $request->input('sex');
@@ -70,9 +72,10 @@ class SpaController extends Controller
         $contacts->tel = $request->input('tel');
         $contacts->contactText = $request->input('contactText');
         $contacts->save();
-        return redirect()->route('index')->with('flash_message', '投稿が完了しました。');
+        return redirect()->route('index')->with('flash_message', '投稿が完了しました');;
     }
     
+    // お問合せ一覧ページ
     public function index() {
         $contacts = Contact::get();
         return view('index', compact('contacts'));

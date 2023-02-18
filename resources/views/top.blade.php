@@ -1,6 +1,7 @@
 @extends('layouts.app')
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,7 @@
         
         <h2>自分だけのお気に入りの湯とサウナを登録していこう</h2>
         
+        {{-- 画像表示 --}}
         <div class="flex-container">
             <div class="flex-item">
                 <div class="image-wrap">
@@ -29,6 +31,7 @@
             </div>
         </div>
         
+        {{-- マップ登録ボタン --}}
         <div class="btn-container">
             <button class="btn" onclick="location.href='{{ route('serch') }}' ">登録する</button>
         </div>
@@ -37,6 +40,7 @@
 
     <section>
 
+        {{-- アプリ説明 --}}
         <div class="explanation">
             <p><span class="main-text">湯屋なう</span>とは？</p>
             <p><span class="sub-text">温泉</span>、<span class="sub-text">銭湯</span>、<span class="sub-text">サウナ</span>好きのためのアプリになります。</p>
@@ -52,6 +56,7 @@
 
             <h2>湯屋まっぷを見てみよう</h2>
 
+            {{-- 画像表示 --}}
             <div class="fovorite-container">
                 <div class="favorite-item">
                     <div class="image-wrap2">
@@ -59,6 +64,7 @@
                     </div>
                 </div>
 
+                {{-- マップ移動ボタン --}}
                 <div class="favorite-btn-container">
                     <div class="favorite-text">
                         <p>〜湯屋　まっぷ〜</p>
@@ -71,8 +77,9 @@
             
     </section>
 
-    {{-- JavaScript --}}
-    <script src="{{ asset('/js/top.js') }}"></script>
+{{-- JavaScript --}}
+<script src="{{ asset('/js/top.js') }}"></script>
+
 </body>
 </html>
 @endsection

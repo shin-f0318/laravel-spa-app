@@ -17,9 +17,11 @@
                 <h1 class="contact-ttl">お問合せ一覧</h1>  
                 
                 {{-- お問合せ内容表示 --}}
-                 @if (session('flash_message'))
-                     <p>{{ session('flash_message') }}</p>
-                 @endif
+                {{-- @if (session('flash_message'))
+                    <p>{{ session('flash_message') }}</p>
+                @endif --}}
+                
+                {{-- お問合せ内容一覧表示 --}}
                 <div>
                     <table class="contact-table">
                         <tr>
@@ -46,8 +48,8 @@
         </article>
     </main>
 
-    {{-- JavaScript --}}
-    <script src="{{ asset('/js/index.js') }}"></script>
+{{-- JavaScript --}}
+<script src="{{ asset('/js/index.js') }}"></script>
 </body>
 </html>
 @endsection
