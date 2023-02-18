@@ -12,7 +12,7 @@ return [
     | has failed, such as for an invalid token or invalid new password.
     |
     */
-
+    
     'reset' => 'パスワードを再設定しました。',
     'sent' => 'パスワード再設定リンクを送信しました。',
     'throttled' => 'しばらく再試行はお待ちください。',
