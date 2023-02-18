@@ -71,6 +71,7 @@ function initMap() {
 		alert('位置情報の取得に失敗しました。エラーコード：' + error.code);
 		var latlng = new google.maps.LatLng(35.6812405, 139.7649361); //東京駅
 	}
+  
   navigator.geolocation.getCurrentPosition(success, fail);
 
   // 検索機能
@@ -190,7 +191,10 @@ function initMap() {
 
       // 吹き出しの追加
       infoWindow[i] = new google.maps.InfoWindow({
-        content: '住所:' + markerData[i]['spa_address'] + '<br><br>' + markerData[i]['spa_type'] + ':' + markerData[i]['spa_name'] + '<br><br>' + '料金:' + markerData[i]['spa_price'] + '円' + '<br><br>' + '特徴:' + markerData[i]['spa_point']
+        content: '住所:' + markerData[i]['spa_address'] + '<br><br>' + 
+                 markerData[i]['spa_type'] + ':' + markerData[i]['spa_name'] + '<br><br>' + 
+                 '料金:' + markerData[i]['spa_price'] + '円' + '<br><br>' + 
+                 '特徴:' + markerData[i]['spa_point']
       });
 
       // サイドバー
