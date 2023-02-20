@@ -211,18 +211,19 @@ function initMap() {
     document.getElementById("sidebar").innerHTML = sidebar_html;
 
   }
-
-  function markerEvent(i) {
-    marker[i].addListener('click', function() {
-      myclick(i);
-    });
-  }
-
 }
+
+var openWindow;
+
+function markerEvent(i) {
+  marker[i].addListener('click', function() {
+    myclick(i);
+  });
+}
+
 
 //myclickはクリック時に呼ばれる関数のため、initMap関数内から外す。
 function myclick(i) {
-  var openWindow;
   if(openWindow){
     openWindow.close();
   }
