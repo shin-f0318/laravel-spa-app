@@ -9,7 +9,7 @@ function initMap() {
   //マップの初期設定です。
   var map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 35.6811673, lng: 139.7670516 },
-    zoom: 8,
+    zoom: 12,
     mapTypeId: "roadmap",
     // マップのスタイル変更
     styles: [
@@ -54,15 +54,19 @@ function initMap() {
   function success(pos) {
     var lat = pos.coords.latitude;
     var lng = pos.coords.longitude;
-    var latlng = new google.maps.LatLng(lat, lng); //中心の緯度, 経度
+
+    //中心の緯度, 経度
+    var latlng = new google.maps.LatLng(lat, lng);
     var icon = {
       url: '/img/human.png',
       scaledSize: new google.maps.Size(30, 30)
     }
     
     new google.maps.Marker({
-      position: latlng, //マーカーの位置（必須）
-      map: map, //マーカーを表示する地図
+      //マーカーの位置
+      position: latlng,
+      //マーカーを表示する地図
+      map: map,
       icon,
     });
   }
@@ -75,46 +79,56 @@ function initMap() {
   navigator.geolocation.getCurrentPosition(success, fail);
 
   // 検索機能
+
+  // 引数inputを定義 viewのidの値を取得
   const input = document.getElementById("pac-input");
+  // SearchBoxクラスはPlacesライブラリのメソッド 公式ドキュメント参照
   const searchBox = new google.maps.places.SearchBox(input);
  
-
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  // コントローラの位置を表す定数
+  // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
   
-
+  // bound_changedイベントは(見えてる範囲の地図･ビューポートに変化があったときに発火される)
   map.addListener("bounds_changed", () => {
+    // getBoundsメソッドはビューポートの境界を取得するMapクラスのメソッド
     searchBox.setBounds(map.getBounds());
   });
   
   let markers = [];
+  // place_chagedイベントはAutoCompleteクラスのイベント
   searchBox.addListener("places_changed", () => {
   
+    // getPlacesメソッドはクエリ(検索キーワード)を配列(PlaceResult)で返すもの
     const places = searchBox.getPlaces();
     
     if (places.length == 0) {
       return;
     }
+
     // 古いマーカーを削除
+    // forEachメソッドは引数にある関数へ、Mapオブジェクトのキー/値を順に代入･関数の実行をする
     markers.forEach((marker) => {
-    
+
+      // setMapメソッドはMarker(Polyline,Circleなど)クラスのメソッド。Markerを指定した位置に配置する。引数nullにすると地図から取り除く
       marker.setMap(null);
       
     });
     markers = [];
     
+    // LatLngBoundsクラスは境界を作るインスンタンスを作成
     const bounds = new google.maps.LatLngBounds();
     
     places.forEach((place) => {
+
+      // geometryはplaceライブラリのメソッド
       if (!place.geometry) {
       console.log("Returned place contains no geometry");
       return;
-    }
-    var icon = {
-      url: place.icon,
-      size: new google.maps.Size(71, 71),
-      origin: new google.maps.Point(0, 0),
-      anchor: new google.maps.Point(17, 34),
-      scaledSize: new google.maps.Size(25, 25),
+      }
+
+      // iconはアイコンを表すオブジェクト。マーカーをオリジナル画像にしたいときなどに定義する
+      var icon = {
+        url: '/img/search_logo.png',
       };
       markers.push(
         new google.maps.Marker({
@@ -124,13 +138,20 @@ function initMap() {
           position: place.geometry.location,
         })
       );
-
+        
+      // viewportメソッド
       if (place.geometry.viewport) {
+
+        // unionメソッドはLatLngBoundsクラスのメソッド。自身の境界に指定した境界を取り込んで合成する
         bounds.union(place.geometry.viewport);
       } else {
+
+        // extendメソッドはLatLngBoundsクラスのメソッド。自身の境界に新しく位置座標を追加する。
         bounds.extend(place.geometry.location);
       }
     });
+
+    // fitBoundsメソッドはmapクラスのメソッド。指定した境界を見えやすい位置にビューポートを変更する。
     map.fitBounds(bounds);
   });
 
@@ -145,10 +166,10 @@ function initMap() {
     $.ajax({
       type: "get",
       url: "https://yuya-now.com/api/spa",
-      // url: "http://127.0.0.1:8080/api/spa",
+      // url: "http://127.0.0.1:8000/api/spa",
       dataType: "json",
       success: function(data){
-        console.log(data);
+        // console.log(data);
         spaData = data;
         setMarker(spaData);
       },
@@ -194,7 +215,9 @@ function initMap() {
         content: '住所:' + markerData[i]['spa_address'] + '<br><br>' + 
                  markerData[i]['spa_type'] + ':' + markerData[i]['spa_name'] + '<br><br>' + 
                  '料金:' + markerData[i]['spa_price'] + '円' + '<br><br>' + 
-                 '特徴:' + markerData[i]['spa_point']
+                 '特徴:' + markerData[i]['spa_point'] + '<br><br>'
+                //  `<img src="${markerData[i]['spa_image']}">` + '<br><br>' +
+                //  `<a href="${markerData[i]['spa_url']}">公式リンク</a>`
       });
 
       // サイドバー
@@ -207,6 +230,7 @@ function initMap() {
     }
 
     // console.log(sidebar_html);
+
     // サイドバー
     document.getElementById("sidebar").innerHTML = sidebar_html;
 

@@ -2,7 +2,7 @@
 
 // マップ表示
 function initMap() {
-    const map = new google.maps.Map(document.getElementById("map"), {
+  var map = new google.maps.Map(document.getElementById("map"), {
     // マップの中心を設定
     center: { lat: 35.6811673, lng: 139.7670516 },
     // マップの初期倍率
@@ -47,81 +47,92 @@ function initMap() {
     ]
   });
 
-// 検索機能
+  // 検索機能
+
+  // 引数inputを定義 viewのidの値を取得
   const input = document.getElementById("pac-input");
+  // SearchBoxクラスはPlacesライブラリのメソッド 公式ドキュメント参照
   const searchBox = new google.maps.places.SearchBox(input);
-
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
+  
+  // コントローラの位置を表す定数
+  // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+    
+  // bound_changedイベントは(見えてる範囲の地図･ビューポートに変化があったときに発火される)
   map.addListener("bounds_changed", () => {
+    // getBoundsメソッドはビューポートの境界を取得するMapクラスのメソッド
     searchBox.setBounds(map.getBounds());
   });
-
+    
   let markers = [];
+  // place_chagedイベントはAutoCompleteクラスのイベント
   searchBox.addListener("places_changed", () => {
-  //"place_chaged"イベントはAutoCompleteクラスのイベント
-
-  const places = searchBox.getPlaces();
-  //"getPlaces"メソッドはクエリ(検索キーワード)を配列(PlaceResult)で返す。
-  if (places.length == 0) {
-      return;
-  }
-  // 古いマーカーを削除
-  markers.forEach((marker) => {
-    //"forEach"メソッドは引数にある関数へ、Mapオブジェクトのキー/値を順に代入･関数の実行をする。
-      marker.setMap(null);
-      //setMapメソッドはMarker(Polyline,Circleなど)クラスのメソッド。Markerを指定した位置に配置する。引数nullにすると地図から取り除く。
-    });
-  markers = [];
-  // 場所について、アイコン、名前、場所を取得します。
-  const bounds = new google.maps.LatLngBounds();
-  //"LatLngBounds"クラスは境界を作るインスンタンスを作成。
-  places.forEach((place) => {
-    if (!place.geometry) {
-    //"geometry"はplaceライブラリのメソッド。
-      console.log("Returned place contains no geometry");
+    
+    // getPlacesメソッドはクエリ(検索キーワード)を配列(PlaceResult)で返すもの
+    const places = searchBox.getPlaces();
+      
+    if (places.length == 0) {
       return;
     }
-    const icon = {
-      url: place.icon,
-      //"icon"はアイコンを表すオブジェクト。マーカーをオリジナル画像にしたいときなど。
-      size: new google.maps.Size(71, 71),
-      origin: new google.maps.Point(0, 0),
-      anchor: new google.maps.Point(17, 34),
-      //"Point"クラスはマーカーのラベルなどの位置を決めるインスタンスメソッド。
-      scaledSize: new google.maps.Size(25, 25),
-      };
-      // 各場所にマーカーを作成する。
-      markers.push(new google.maps.Marker({
-        map,
-        icon,
-        title: place.name,
-        position: place.geometry.location,
-      }));
+    // 古いマーカーを削除
+    // forEachメソッドは引数にある関数へ、Mapオブジェクトのキー/値を順に代入･関数の実行をする
+    markers.forEach((marker) => {
 
+      // setMapメソッドはMarker(Polyline,Circleなど)クラスのメソッド。Markerを指定した位置に配置する。引数nullにすると地図から取り除く
+      marker.setMap(null);
+        
+    });
+    markers = [];
+      
+    // LatLngBoundsクラスは境界を作るインスンタンスを作成
+    const bounds = new google.maps.LatLngBounds();
+      
+    places.forEach((place) => {
+
+      // geometryはplaceライブラリのメソッド
+      if (!place.geometry) {
+      console.log("Returned place contains no geometry");
+      return;
+      }
+
+      // iconはアイコンを表すオブジェクト。マーカーをオリジナル画像にしたいときなどに定義する
+      var icon = {
+        url: '/img/search_logo.png',
+      };
+      markers.push(
+        new google.maps.Marker({
+          map,
+          icon,
+          title: place.name,
+          position: place.geometry.location,
+        })
+      );
+        
+      // viewportメソッド
       if (place.geometry.viewport) {
 
+        // unionメソッドはLatLngBoundsクラスのメソッド。自身の境界に指定した境界を取り込んで合成する
         bounds.union(place.geometry.viewport);
-
       } else {
-        bounds.extend(place.geometry.location);
 
+        // extendメソッドはLatLngBoundsクラスのメソッド。自身の境界に新しく位置座標を追加する。
+        bounds.extend(place.geometry.location);
       }
     });
+
+    // fitBoundsメソッドはmapクラスのメソッド。指定した境界を見えやすい位置にビューポートを変更する。
     map.fitBounds(bounds);
-  
   });
 
   // クリック動作
   google.maps.event.addListener(map, 'click', event => clickListener(event, map));
 
-  }
+}
 
-  // 一つ前のピンの変数
-  let before_marker = null;
+// 一つ前のピンの変数
+let before_marker = null;
 
-  // ピン
-  function clickListener(event, map) {
+// ピン
+function clickListener(event, map) {
 
   // 緯度取得
   const lat = event.latLng.lat();
@@ -186,5 +197,6 @@ function initMap() {
   
       // htmlへ変数の送信
       document.getElementById('id_address').value = address;
-    }); 
+    }
+  ); 
 }

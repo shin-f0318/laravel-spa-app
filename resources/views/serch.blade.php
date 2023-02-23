@@ -115,12 +115,14 @@
                             </td>
                         </tr>
 
+                        {{-- 写真投稿 --}}
                         {{-- <tr>
                             <td>画像保存</td>
-                            <td><input type="file" class="form-control" name="spa_image"></td>
-                        </tr>
+                            <td><input type="file" class="form-control" name="spa_image" accept="image/png,image/jpeg,image/jpg"></td>
+                        </tr> --}}
 
-                        <tr>
+                        {{-- URL --}}
+                        {{-- <tr>
                             <td>公式URL</td>
                             <td><input type="url" class="form-control" name="spa_url" placeholder="URLを貼り付けてください"></td>
                         </tr> --}}
@@ -142,17 +144,19 @@
 
         </div>
 
+        <br>
+
+        {{-- 検索Box --}}
+        <input
+            id="pac-input"
+            class="controls"
+            type="text"
+            placeholder="検索"
+        >
+
         {{-- 地図を表示する領域 --}}
         <div id="map-container">
             <div id="map"></div>
-
-            {{-- 検索Box --}}
-            <input
-                id="pac-input"
-                class="controls"
-                type="text"
-                placeholder="検索"
-            >
         </div>
         
         {{--
