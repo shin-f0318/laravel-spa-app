@@ -20,7 +20,7 @@ use App\Http\Controllers\AdminContactController;
 Route::get('/', [SpaController::class, 'top'])->name('top');
 
 // // ログイン認証グループ定義
-// Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => ['auth']], function() {
 
 // 施設登録ページ
 Route::get('/serch', [SpaController::class, 'serch'])->name('serch');
@@ -33,7 +33,7 @@ Route::post('/create', [SpaController::class, 'store'])->name('store');
 // お問合せ一覧ページ
 Route::get('/index', [SpaController::class, 'index'])->name('index');
 
-// });
+});
 
 // マップ一覧ページ
 Route::get('/map', [SpaController::class, 'map'])->name('map');
