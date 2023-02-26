@@ -30,11 +30,33 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class='nav-link' href="{{ url('login') }}">お問合せ</a>
+                        <a class='nav-link' href="{{ url('create') }}">お問合せ</a>
                     </li>
 
                     <li class="nav-item">
                         <a class='nav-link' href="{{ url('index') }}">お問合せ一覧</a>
+                    </li>
+                    
+                    {{-- 管理者のみ表示 --}}
+                    <li class="nav-item dropdown">
+                        @can('admin')
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre >管理者メニュー</a>
+
+                            {{-- 管理者メニュー --}}
+                            <div class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="navbarDropdown">
+                                {{-- Userデータ --}}
+                                <a class="dropdown-item" href="{{ route('user.index') }}">ユーザー</a>
+
+                                {{-- Spaデータ --}}
+                                <a class="dropdown-item" href="{{ route('spa.index') }}">湯屋</a>
+
+                                {{-- Contactデータ --}}
+                                <a class="dropdown-item" href="{{ route('contact.index') }}">お問合せ</a>
+
+                                {{-- laravel-admin --}}
+                                <a class="dropdown-item" href="{{ url('/admin/auth/login') }}">laravel-admin</a>
+                            </div>
+                        @endcan
                     </li>
 
                     @guest
